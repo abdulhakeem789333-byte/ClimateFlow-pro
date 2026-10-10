@@ -1,0 +1,96 @@
+// app/page.tsx
+import Link from "next/link";
+import { 
+  Thermometer, 
+  Wrench, 
+  MapPin, 
+  Users, 
+  BarChart3, 
+  Shield,
+  ArrowRight,
+  CheckCircle2
+} from "lucide-react";
+
+export default function HomePage() {
+  return (
+    <div className="min-h-screen bg-slate-950 text-slate-100">
+      {/* Navigation */}
+      <nav className="border-b border-slate-800 bg-slate-950/80 backdrop-blur-md sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center font-bold text-white text-lg">
+              CF
+            </div>
+            <span className="font-bold text-xl tracking-tight">
+              ClimateFlow <span className="text-blue-400">Pro</span>
+            </span>
+          </div>
+
+          <div className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+            <a href="#features" className="hover:text-white transition">Features</a>
+            <a href="#pricing" className="hover:text-white transition">Pricing</a>
+            <Link href="/login" className="hover:text-white transition">Login</Link>
+            <Link
+              href="/signup"
+              className="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2 rounded-xl transition"
+            >
+              Start Free Trial
+            </Link>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-blue-600/10 via-transparent to-transparent" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-20 pb-28 text-center">
+          <div className="inline-flex items-center gap-2 bg-slate-900 border border-slate-800 rounded-full px-4 py-1.5 text-sm text-slate-300 mb-8">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            Trusted by 1,200+ HVAC companies
+          </div>
+
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight max-w-4xl mx-auto leading-tight">
+            The Complete Platform for{" "}
+            <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
+              Modern HVAC Businesses
+            </span>
+          </h1>
+
+          <p className="mt-6 text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto">
+            Schedule jobs, track technicians in real-time, manage inventory, 
+            generate invoices, and deliver exceptional service — all from one powerful platform.
+          </p>
+
+          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link
+              href="/signup"
+              className="bg-blue-600 hover:bg-blue-500 text-white px-8 py-3.5 rounded-xl font-semibold text-lg flex items-center gap-2 transition shadow-lg shadow-blue-600/20"
+            >
+              Start Free 14-Day Trial
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+            <Link
+              href="/demo"
+              className="bg-slate-900 hover:bg-slate-800 border border-slate-700 text-white px-8 py-3.5 rounded-xl font-semibold text-lg transition"
+            >
+              Watch Demo
+            </Link>
+          </div>
+
+          <p className="mt-4 text-sm text-slate-500">
+            No credit card required • Setup in under 10 minutes
+          </p>
+        </div>
+      </section>
+
+      {/* Features Grid */}
+      <section id="features" className="max-w-7xl mx-auto px-4 sm:px-6 py-24">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl sm:text-4xl font-bold">Everything you need to run your HVAC business</h2>
+          <p className="mt-4 text-slate-400 text-lg">From the first call to the final invoice — all in one place.</p>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {[
+            {
+              icon: <Wrench className
